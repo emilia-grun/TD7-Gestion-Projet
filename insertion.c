@@ -42,3 +42,46 @@ struct Noeud *insertion(struct Noeud *n, char *ch)
         return insertion(n->gauche, ch);
     }
 }
+
+struct Noeud *insertionEq(struct Noeud *n, char *ch)
+{ // Q6 : Insertion équilibrée de la chaîne ch dans l'arbre de racine n ; retourne la racine de l'arbre après insertion
+    static int compteur = 0;
+    static struct Noeud *nouveau;
+
+    if (compteur == 0)
+    {
+        nouveau = malloc(sizeof(*nouveau));
+        strcpy(nouveau->data, ch);
+        nouveau->gauche = NULL;
+        nouveau->droite = NULL;
+    }
+
+    if (strcmp(n->data, ch) <= 0)
+    {
+        if (n->droite == NULL)
+        {
+            n->droite = nouveau;
+            compteur = 0;
+            return n;
+        }
+        else
+        {
+            compteur++;
+            return insertionEq(n->droite, ch);
+        }
+    }
+    else
+    {
+        if (n->gauche == NULL)
+        {
+            n->gauche = nouveau;
+            compteur = 0;
+            return n;
+        }
+        else
+        {
+            compteur++;
+            return insertionEq(n->gauche, ch);
+        }
+    }
+}
