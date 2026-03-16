@@ -21,3 +21,16 @@ char *minimum(struct Noeud *n)
         return NULL;
     return minCh(n->data, minCh(minimum(n->gauche), minimum(n->droite)));
 }
+
+
+char *maxCh(char *c1, char *c2)
+{ // Le maximum de 2 chaînes avec prise en compte de NULL
+    if (c2 == NULL)
+        return c1;
+    else if (c1 == NULL || strcmp(c1, c2) < 0)
+        return c2;
+
+    return c1;
+    // Si les deux chaînes sont identiques, alors c1 sera renvoyé par défaut
+}
+
