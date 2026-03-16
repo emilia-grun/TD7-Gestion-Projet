@@ -34,3 +34,10 @@ char *maxCh(char *c1, char *c2)
     // Si les deux chaînes sont identiques, alors c1 sera renvoyé par défaut
 }
 
+char *maximum(struct Noeud *n)
+{ // Recherche la valeur maximale de l'arbre
+    if (n == NULL)
+        return NULL;
+    return maxCh(n->data, maxCh(maximum(n->gauche), maximum(n->droite)));
+}
+
