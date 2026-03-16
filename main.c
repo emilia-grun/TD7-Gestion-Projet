@@ -41,10 +41,10 @@ int main(int argc, char **argv) {
                 racine = suppression(racine, buffer);
                 break;
             case 3:
-                // à compléter
+                printf("Nombre d'éléments : %d\n", taille(racine));
                 break;
             case 4:
-                // à compléter
+                printf("Hauteur de l'arbre : %d\n", hauteur(racine));
                 break;
             case 5:
                 // à compléter
