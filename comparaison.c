@@ -41,3 +41,9 @@ char *maximum(struct Noeud *n)
     return maxCh(n->data, maxCh(maximum(n->gauche), maximum(n->droite)));
 }
 
+int taille(struct Noeud *n)
+{
+    if (n == NULL)
+        return 0;
+    return 1 + taille(n->gauche) + taille(n->droite);
+}

@@ -1,6 +1,7 @@
 #ifndef PROJET_H
 #define PROJET_H
 
+//Emilia
 struct Noeud
 {
     char data[255];
@@ -8,6 +9,9 @@ struct Noeud
     struct Noeud *droite;
 };
 
+int taille(struct Noeud *n);
+
+//Negar
 struct Noeud *recherche(struct Noeud *n, char *ch);
 struct Noeud *recherche2(struct Noeud *n, char *ch);
 void supprComplet(struct Noeud *n);
@@ -15,7 +19,6 @@ struct Noeud *suppression(struct Noeud *n, char *ch);
 
 
 // Lucresse
-
 char *minCh(char *c1, char *c2);
 char *minimum(struct Noeud *n);
 char *maxCh(char *c1, char *c2);
