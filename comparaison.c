@@ -14,3 +14,10 @@ char *minCh(char *c1, char *c2)
     return c1;
     // Si les deux chaînes sont identiques, alors c1 sera renvoyé par défaut
 }
+
+char *minimum(struct Noeud *n)
+{ // Q4 : Recherche la valeur minimale de l'arbre
+    if (n == NULL)
+        return NULL;
+    return minCh(n->data, minCh(minimum(n->gauche), minimum(n->droite)));
+}
