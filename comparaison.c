@@ -47,3 +47,12 @@ int taille(struct Noeud *n)
         return 0;
     return 1 + taille(n->gauche) + taille(n->droite);
 }
+
+int hauteur(struct Noeud *n)
+{
+    if (n == NULL)
+        return -1; // Un arbre vide a une hauteur de -1 (ou 0 selon convention)
+    int h_g = hauteur(n->gauche);
+    int h_d = hauteur(n->droite);
+    return 1 + (h_g > h_d ? h_g : h_d);
+}

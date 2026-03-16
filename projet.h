@@ -10,6 +10,8 @@ struct Noeud
 };
 
 int taille(struct Noeud *n);
+int hauteur(struct Noeud *n);
+
 
 //Negar
 struct Noeud *recherche(struct Noeud *n, char *ch);
