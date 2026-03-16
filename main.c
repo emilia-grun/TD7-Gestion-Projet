@@ -4,7 +4,7 @@
 
 struct Noeud
 {
-    char data[255];
+    char data[256];
     struct Noeud *gauche;
     struct Noeud *droite;
 };
