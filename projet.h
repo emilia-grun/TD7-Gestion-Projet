@@ -14,7 +14,12 @@ void supprComplet(struct Noeud *n);
 struct Noeud *suppression(struct Noeud *n, char *ch);
 
 
+// Lucresse
 
+char *minCh(char *c1, char *c2);
+char *minimum(struct Noeud *n);
+char *maxCh(char *c1, char *c2);
+char *maximum(struct Noeud *n);
 
 //Manzo
 struct Noeud *insertion(struct Noeud *n, char *ch);
