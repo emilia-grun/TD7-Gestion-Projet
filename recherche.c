@@ -5,23 +5,21 @@
 
 struct Noeud *recherche(struct Noeud *n, char *ch) {
     if (n == NULL) return NULL;
-
     int cmp = strcmp(ch, n->data);
-
     if (cmp == 0) return n;
-    else if (cmp < 0) return recherche(n->gauche, ch);
-    else return recherche(n->droite, ch);
+    return recherche(cmp < 0 ? n->gauche : n->droite, ch);
 }
 
 struct Noeud *recherche2(struct Noeud *n, char *ch) {
-    while (n != NULL) {
-        int cmp = strcmp(ch, n->data);
+    if (n == NULL) return NULL;
+    if ((n->gauche != NULL && strcmp(n->gauche->data, ch) == 0) ||
+        (n->droite != NULL && strcmp(n->droite->data, ch) == 0))
+        return n;
 
-        if (cmp == 0) return n;
-        else if (cmp < 0) n = n->gauche;
-        else n = n->droite;
-    }
-    return NULL;
+    if (strcmp(ch, n->data) < 0)
+        return recherche2(n->gauche, ch);
+    else
+        return recherche2(n->droite, ch);
 }
 
 void supprComplet(struct Noeud *n) {
