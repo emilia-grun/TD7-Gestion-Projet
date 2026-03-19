@@ -5,7 +5,7 @@
 #include "projet.h"
 
 int main(int argc, char **argv) {
-    int action = 0;
+    int action = 0, action_affichage = 0;
     char buffer[256];
     struct Noeud *racine = NULL;
 
@@ -23,7 +23,7 @@ int main(int argc, char **argv) {
     while (action != -1) {
         printf("\n--- Menu ---\n");
         printf("1. Ajouter un element\n2. Supprimer un element\n3. Taille de l'arbre\n");
-        printf("4. Hauteur de l'arbre\n5. Afficher (Infixe)\n-1. Quitter\n> ");
+        printf("4. Hauteur de l'arbre\n5. Afficher l'arbre\n-1. Quitter\n> ");
         
         if (scanf("%d%*c", &action) != 1) break;
 
@@ -47,7 +47,23 @@ int main(int argc, char **argv) {
                 printf("Hauteur de l'arbre : %d\n", hauteur(racine));
                 break;
             case 5:
-                // à compléter
+                printf("-- Affichage --\n1. Ordre préfixe\n2. Ordre infixe\n3. Ordre suffixe\n> ");
+                scanf("%d%*c", &action_affichage);
+                switch (action_affichage)
+                {
+                    case 1:
+                        parcoursPre(racine);
+                        break;
+                    case 2:
+                        parcoursInf(racine);
+                        break;
+                    case 3:
+                        parcoursSuf(racine);
+                        break;
+                    default:
+                        printf("Option d'affichage invalide.");
+                        continue;
+                }
                 break;
             case -1:
                 printf("Au revoir !\n");
