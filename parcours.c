@@ -1,4 +1,3 @@
-
 #include <stdio.h>  // Pour printf() et scanf()
 #include <string.h> // Pour strcmp()
 #include <stdlib.h> // Pour malloc() et free()

@@ -30,4 +30,9 @@ char *maximum(struct Noeud *n);
 struct Noeud *insertion(struct Noeud *n, char *ch);
 struct Noeud *insertionEq(struct Noeud *n, char *ch);
 
+//Hadi
+void parcoursPre(struct Noeud *n);
+void parcoursInf(struct Noeud *n);
+void parcoursSuf(struct Noeud *n);
+
 #endif
