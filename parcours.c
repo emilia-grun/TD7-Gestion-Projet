@@ -1,12 +1,9 @@
-#include <stdio.h>  // Pour printf() et scanf()
-#include <string.h> // Pour strcmp()
-#include <stdlib.h> // Pour malloc() et free()
-#include <math.h>   // Pour fmin() et fmax()
-#include <time.h>   // Pour initialiser le générateur aléatoire
-#include "projet.h" 
+#include <stdio.h>
+#include "projet.h"
 
+// Affiche l'arbre avec un parcours préfixe
 void parcoursPre(struct Noeud *n)
-{ // Q7 : Parcours préfixe
+{
     if (n == NULL)
         return;
 
@@ -15,8 +12,9 @@ void parcoursPre(struct Noeud *n)
     parcoursPre(n->droite);
 }
 
+// Affiche l'arbre avec un parcours infixe
 void parcoursInf(struct Noeud *n)
-{ // Q8 : Parcours infixe
+{
     if (n == NULL)
         return;
 
@@ -25,8 +23,9 @@ void parcoursInf(struct Noeud *n)
     parcoursInf(n->droite);
 }
 
+// Affiche l'arbre avec un parcours suffixe
 void parcoursSuf(struct Noeud *n)
-{ // Q9 : Parcours suffixe
+{
     if (n == NULL)
         return;
 

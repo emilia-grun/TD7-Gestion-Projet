@@ -4,6 +4,7 @@
 #include <string.h>
 #include "projet.h"
 
+// Insertion aléatoire dans l'arbre (pas utilisé actuellement dans le projet final)
 struct Noeud *insertion(struct Noeud *n, char *ch)
 {
     srand(time(NULL));
@@ -43,19 +44,26 @@ struct Noeud *insertion(struct Noeud *n, char *ch)
     }
 }
 
-struct Noeud *insertionEq(struct Noeud *n, char *ch) {
-    if (n == NULL) {
+// Insertion équilibrée dans l'arbre
+struct Noeud *insertionEq(struct Noeud *n, char *ch)
+{
+    if (n == NULL)
+    {
         struct Noeud *nouveau = malloc(sizeof(struct Noeud));
-        if (nouveau == NULL) return NULL;
+        if (nouveau == NULL)
+            return NULL;
         strcpy(nouveau->data, ch);
         nouveau->gauche = NULL;
         nouveau->droite = NULL;
         return nouveau;
     }
 
-    if (strcmp(ch, n->data) <= 0) {
+    if (strcmp(ch, n->data) <= 0)
+    {
         n->gauche = insertionEq(n->gauche, ch);
-    } else {
+    }
+    else
+    {
         n->droite = insertionEq(n->droite, ch);
     }
 
